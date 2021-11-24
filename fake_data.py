@@ -11,10 +11,11 @@ class demoExample:
     @cherrypy.expose
     def led(self,state):
         if state=="1":
-            print("do the things")
+            red.on()
         elif state=="0":
-            print("do not the things")
+            red.off()
     index.exposed = True
-cherrypy.config.update({'server.socket_port': 8099})
+cherrypy.config.update({'server.socket_port': 8099,
+                        'server.socket_host': '0.0.0.0'})
 cherrypy.engine.restart()
 cherrypy.quickstart(demoExample())
