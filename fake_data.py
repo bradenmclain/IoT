@@ -2,7 +2,7 @@ import cherrypy
 import numpy
 from gpiozero import LED
 
-red = 
+red = LED(17)
 
 class demoExample:
     @cherrypy.expose
